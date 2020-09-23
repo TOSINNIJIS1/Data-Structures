@@ -45,12 +45,12 @@ class Stack:
         return self.size
 
     def push(self, value):
+        self.size += 1
         self.storage.add_to_head(value)
-        self.size = self.size + 1
 
     def pop(self):
-        if self.size == 0:
-            return None
-        self.size = self.size - 1
-        return self.storage.remove_head()
+        if self.size > 0:
+            self.size -= 1
+            return self.storage.remove_head()
+        return
 
